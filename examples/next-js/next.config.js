@@ -15,7 +15,7 @@ module.exports = withSourceMaps({
       config.output.futureEmitAssets = false;
       // Generate a common `id` to be used when initializing Rollbar & when uploading the sourcemaps.
       // This could be any common value, as long as it is used in `_document.js` when initializing Rollbar.
-      const codeVersion = JSON.stringify(buildId);
+      const codeVersion = buildId;
       config.plugins.push(
         new webpack.DefinePlugin({
           'process.env.NEXT_BUILD_ID': codeVersion
